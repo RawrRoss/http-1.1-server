@@ -1,0 +1,59 @@
+body {
+	background-image: url('/fortune/glitter.gif');
+	background-color: white;
+	font-family: Comic Sans MS, Comic Sans, Bradley Hand, cursive;
+}
+
+.banner {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: center;
+	margin: 50px;
+}
+
+.banner>img {
+	width: 75px;
+	background-color: white;
+}
+
+.banner>span {
+	text-align: center;
+	background-color: white;
+}
+
+.banner#title>span {
+	font-size: 42px;
+}
+
+.banner#fortune>span {
+	font-size: 32px;
+}
+
+.form-container {
+	justify-content: center;
+}
+
+.form {
+	background-color: white;
+	padding: 10px;
+}
+
+.form>button {
+	font-size: 16px;
+	padding: 4px;
+	min-width: 150px;
+}
+
+.form-row>label,
+.form-row>input {
+	margin-bottom: 20px;
+}
+
+.form-row>input {
+	margin-left: 12px;
+}
+
+.form-row>label {
+	font-size: 16px;
+}

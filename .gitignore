@@ -1,0 +1,4 @@
+.gradle
+.vscode
+buildSrc
+**/build

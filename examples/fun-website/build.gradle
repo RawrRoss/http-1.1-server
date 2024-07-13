@@ -1,0 +1,28 @@
+plugins {
+	id 'application'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation project(':lib:http-server')
+
+	implementation group: 'org.apache.commons', name: 'commons-text', version: '1.10.0'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+application {
+	mainClass = 'com.rawrross.site.Main'
+}
+
+run {
+	workingDir = getProjectDir()
+	standardInput = System.in
+}

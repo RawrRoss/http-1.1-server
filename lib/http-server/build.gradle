@@ -1,0 +1,22 @@
+plugins {
+	id 'java-library'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Export dependencies that other projects using this library are expected to use
+	api group: 'org.jsoup', name: 'jsoup', version: '1.15.4'
+
+	// Internal dependencies
+	implementation group: 'org.apache.commons', name: 'commons-text', version: '1.10.0'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}

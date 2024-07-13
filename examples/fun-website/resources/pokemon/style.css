@@ -1,0 +1,61 @@
+body {
+	background-color: whitesmoke;
+}
+
+.fusion {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+}
+
+.card>img {
+	image-rendering: pixelated;
+	width: 240px;
+}
+
+.card-title {
+	display: flex;
+	justify-content: center;
+}
+
+.card-title>img {
+	height: 30px;
+}
+
+.card-title>span {
+	font-size: 24px;
+	margin-left: 4px;
+}
+
+.operator {
+	font-size: 36px;
+	font-weight: bold;
+	margin: 16px;
+}
+
+.form-container {
+	justify-content: center;
+	margin: 24px;
+}
+
+.form {
+	padding: 16px;
+	border-width: 1px;
+	border-radius: 6px;
+	border-color: gray;
+	border-style: solid;
+}
+
+.form-row>label,
+.form-row>select {
+	margin-bottom: 12px;
+}
+
+.form-row>select {
+	margin-left: 16px;
+}

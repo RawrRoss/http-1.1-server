@@ -1,0 +1,22 @@
+.form-container {
+	display: flex;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-table {
+	display: table;
+}
+
+.form-row {
+	display: table-row;
+}
+
+.form-row>label,
+.form-row>input,
+.form-row>select {
+	display: table-cell;
+}
