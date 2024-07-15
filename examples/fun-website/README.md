@@ -10,7 +10,7 @@ Adapted and improved from an old school project. A simple website containing som
 
 ### Fortune
 
-Use a provided name and age to select a fortune from a predefined list.
+Use a provided name and age to select a fortune from a predefined list. Each unique input generates the same fortune each time, which is accomplished by calculating its MD5 hash as an index to list of fortunes.
 
 ### Pokemon Fusion
 

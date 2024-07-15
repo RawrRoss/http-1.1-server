@@ -2,7 +2,7 @@
 
 Contains example projects using the HTTP server.
 
-## Fun Website
+## [Fun Website](/examples/fun-website)
 
 Adapted and improved from an old school project. A simple website containing some entertaining interactive pages.
 
