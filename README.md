@@ -15,6 +15,8 @@ Internally, the HTTP server library utilizes Apache Commons Text, Commons I/O, a
 
 ## Running Examples
 
+This project uses Gradle 8.5 for building and dependency management, and the project is tested with Java version 21. Gradle requires Java to be installed.
+
 The example applications found in the [`/examples`](/examples) directory can be launched using the command `gradlew [project name]:run`, with the project name obtained from `gradlew projects`.
 
 ## Debugging - VSCode
