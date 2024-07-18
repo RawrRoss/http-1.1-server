@@ -151,6 +151,28 @@ public class Fortune implements Endpoint {
 					.text("Go Again?");
 		}
 
+		Element footer = doc.body()
+				.appendElement("div")
+				.addClass("footer");
+
+		footer.appendElement("a")
+				.attr("target", "_blank")
+				.attr("href", "https://tenor.com/view/emoji-emojis-stickers-sparkle-stars-gif-14519905")
+				.text("Sparkles");
+		footer.appendText(" and ");
+		footer.appendElement("a")
+				.attr("target", "_blank")
+				.attr("href", "https://tenor.com/view/adamjk-emojis-stickers-crystal-ball-see-future-gif-14519843")
+				.text("Crystal Ball");
+		footer.appendText(" by @adamjk");
+		footer.appendElement("br");
+		footer.appendElement("a")
+				.attr("target", "_blank")
+				.attr("href", "https://tenor.com/view/glitter-sparkle-gif-14595151")
+				.text("Glitter Background");
+
+		footer.appendText(" by CarmellaAmoroso");
+
 		response.setBody(doc);
 	}
 

@@ -4,6 +4,13 @@ body {
 	font-family: Comic Sans MS, Comic Sans, Bradley Hand, cursive;
 }
 
+.footer {
+	position: absolute;
+	bottom: 0;
+	font-size: 14px;
+	margin: 8px;
+}
+
 .banner {
 	display: flex;
 	gap: 12px;
