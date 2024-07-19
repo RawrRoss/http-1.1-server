@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
@@ -13,6 +15,8 @@ import com.rawrross.server.HTTPServer;
 import com.rawrross.site.Main;
 
 public class Fortune implements Endpoint {
+
+	private static final Logger logger = LogManager.getLogger("Fortune");
 
 	private String[] fortunes;
 	private MessageDigest md5;
@@ -27,7 +31,7 @@ public class Fortune implements Endpoint {
 		try {
 			md5 = MessageDigest.getInstance("MD5");
 		} catch (NoSuchAlgorithmException e) {
-			System.err.println("fortune: " + e.getMessage());
+			logger.warn(e.getMessage());
 		}
 	}
 
