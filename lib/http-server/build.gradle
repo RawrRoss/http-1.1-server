@@ -9,6 +9,8 @@ repositories {
 dependencies {
 	// Export dependencies that other projects using this library are expected to use
 	api group: 'org.jsoup', name: 'jsoup', version: '1.15.4'
+	api group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.23.1'
+	api group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.23.1'
 
 	// Internal dependencies
 	implementation group: 'org.apache.commons', name: 'commons-text', version: '1.10.0'

@@ -13,6 +13,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.rawrross.server.HTTPResponse.HttpStatusCode;
 import com.rawrross.server.exception.BadRequestException;
 
@@ -24,6 +27,8 @@ import com.rawrross.server.exception.BadRequestException;
  * @author Randy Ross
  */
 public class HTTPServer {
+
+	private static final Logger logger = LogManager.getLogger("Server");
 
 	public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
@@ -51,8 +56,8 @@ public class HTTPServer {
 		try {
 			ERROR_PAGE = new String(ClassLoader.getSystemResourceAsStream("error.html").readAllBytes(),
 					DEFAULT_CHARSET);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			logger.fatal("Unable to read error.html", e);
 			System.exit(1);
 		}
 	}
@@ -100,7 +105,7 @@ public class HTTPServer {
 		requestHandler = this::defaultRequestHandler;
 		keepAliveTimeout = HTTPServer.DEFAULT_KEEP_ALIVE_TIMEOUT;
 
-		System.out.println("Starting on port " + getPort());
+		logger.info("Listening on port {}", getPort());
 
 		startServerThread(port);
 	}
@@ -198,12 +203,11 @@ public class HTTPServer {
 	}
 
 	private void printException(Exception e, HTTPRequest request) {
-		System.err.println("===== EXCEPTION HANDING REQUEST =====");
-		System.err.println(getDate());
-		e.printStackTrace();
-		System.err.println("--- Request ---");
-		System.err.println((request == null) ? "null" : String.join("\n", request.getLines()));
-		System.err.println("===== END EXCEPTION =====");
+		if (request != null && !request.getLines().isEmpty()) {
+			logger.error("Exception handling request \"{}\"", request.getLines().get(0), e);
+		} else {
+			logger.error("Exception handling request (null)", e);
+		}
 	}
 
 	private void defaultRequestHandler(HTTPRequest request, HTTPResponse response) {

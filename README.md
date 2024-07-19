@@ -11,7 +11,7 @@ This is a simple HTTP 1.1 web server library written in Java (21) that is capabl
 
 ## Dependencies
 
-Internally, the HTTP server library utilizes Apache Commons Text, Commons I/O, and jsoup. Dependencies are managed by Gradle, and the dependency on jsoup is exported to applications as it is required by the server's API.
+Internally, the HTTP server library utilizes Apache Commons Text, Commons I/O, Log4j, and jsoup. Dependencies are managed by Gradle, and the Log4j and jsoup dependencies are exported as APIs of the library.
 
 ## Running Examples
 
