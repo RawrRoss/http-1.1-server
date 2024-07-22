@@ -197,6 +197,8 @@ public class HTTPServer {
 
 				response.write(socket.getOutputStream());
 			} while (running && request != null && request.isConnectionKeepAlive());
+		} catch (SocketException e) {
+			// Ignore socket exceptions (connection reset, connection aborted, etc.)
 		} catch (IOException e) {
 			printException(e, request);
 		}
